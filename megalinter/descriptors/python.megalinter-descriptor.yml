@@ -254,3 +254,22 @@ linters:
       vscode:
         - name: Mypy
           url: https://marketplace.visualstudio.com/items?itemName=matangover.mypy
+  # SQLFluff
+  - linter_name: sqlfluff
+    name: PYTHON_SQLFLUFF
+    linter_url: https://docs.sqlfluff.com/en/stable/
+    linter_repo: https://github.com/sqlfluff/sqlfluff
+    linter_spdx_license: MIT
+    linter_rules_url: https://docs.sqlfluff.com/en/stable/rules.html
+    linter_rules_configuration_url: https://docs.sqlfluff.com/en/stable/configuration.html
+    linter_rules_inline_disable_url: https://docs.sqlfluff.com/en/stable/rules.html#inline-ignoring-errors
+    cli_lint_mode: list_of_files
+    config_file_name: .sqlfluff
+    cli_config_arg_name: "--config"
+    cli_lint_errors_count: regex_count
+    cli_lint_errors_regex: "L\:"
+    examples:
+      - "sqlfluff lint test_sql.sql --dialect=mysql"
+    install:
+      pip:
+        - sqlfluff
